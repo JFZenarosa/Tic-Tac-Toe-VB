@@ -38,6 +38,12 @@
         ElseIf btnC1.Text = btnC2.Text And btnC2.Text = btnC3.Text And Not btnC1.Enabled Then
             theWinner = True
 
+        ElseIf btnA1.Text = btnB2.Text And btnB2.Text = btnC3.Text And Not btnA1.Enabled Then
+            theWinner = True
+
+        ElseIf btnC1.Text = btnB2.Text And btnB2.Text = btnA3.Text And Not btnC1.Enabled Then
+            theWinner = True
+
         End If
 
         If theWinner Then
