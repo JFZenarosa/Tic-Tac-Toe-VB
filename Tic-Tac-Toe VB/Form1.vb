@@ -12,16 +12,40 @@
     End Sub
 
     Private Sub buttonClick(sender As Object, e As EventArgs) Handles btnC3.Click, btnC2.Click, btnC1.Click, btnB3.Click, btnB2.Click, btnB1.Click, btnA3.Click, btnA2.Click, btnA1.Click
-        Dim a As Button = sender
+        Dim btnClick As Button = sender
         If turn Then
-            a.Text = "X"
+            btnClick.Text = "X"
         Else
-            a.Text = "O"
+            btnClick.Text = "O"
         End If
 
         turn = Not turn
-        a.Enabled = False
+        btnClick.Enabled = False
+        turn_count += 1
 
+
+    End Sub
+
+    Private Sub winnerChecker()
+        Dim theWinner As Boolean = False
+
+        If btnA1.Text = btnA2.Text And btnA2.Text = btnA3.Text And Not btnA1.Enabled Then
+            theWinner = True
+
+        ElseIf btnB1.Text = btnB2.Text And btnB2.Text = btnB3.Text And Not btnB1.Enabled Then
+            theWinner = True
+        End If
+
+        If theWinner Then
+            Dim winner As String = ""
+
+            If turn Then
+                winner = "O"
+            Else
+                winner = "X"
+            End If
+            MessageBox.Show(winner + "Wins the Game!", "Congratulations!")
+        End If
 
     End Sub
 
