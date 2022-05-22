@@ -55,6 +55,7 @@
         End If
 
         If theWinner Then
+            disableBtn()
             Dim winner As String = ""
 
             If turn Then
@@ -70,6 +71,14 @@
 
         End If
 
+    End Sub
+
+    Private Sub disableBtn()
+        Dim c As Control
+        For Each c In Controls
+            Dim a As Button = c
+            a.Enabled = False
+        Next
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
