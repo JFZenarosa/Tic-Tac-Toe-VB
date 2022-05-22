@@ -22,7 +22,7 @@
         turn = Not turn
         btnClick.Enabled = False
         turn_count += 1
-
+        winnerChecker()
 
     End Sub
 
@@ -34,6 +34,10 @@
 
         ElseIf btnB1.Text = btnB2.Text And btnB2.Text = btnB3.Text And Not btnB1.Enabled Then
             theWinner = True
+
+        ElseIf btnC1.Text = btnC2.Text And btnC2.Text = btnC3.Text And Not btnC1.Enabled Then
+            theWinner = True
+
         End If
 
         If theWinner Then
@@ -44,7 +48,7 @@
             Else
                 winner = "X"
             End If
-            MessageBox.Show(winner + "Wins the Game!", "Congratulations!")
+            MessageBox.Show(winner + " Wins the Game!", "Congratulations!")
         End If
 
     End Sub

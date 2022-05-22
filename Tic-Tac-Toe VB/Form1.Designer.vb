@@ -164,6 +164,7 @@ Partial Class TTTform
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "TTTform"
         Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tic Tac Toe"
         Me.ResumeLayout(False)
 
