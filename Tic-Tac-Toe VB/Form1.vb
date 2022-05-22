@@ -71,10 +71,14 @@
 
     Private Sub disableBtn()
         Dim c As Control
-        For Each c In Controls
-            Dim a As Button = c
-            a.Enabled = False
-        Next
+        Try
+            For Each c In Controls
+                Dim a As Button = c
+                a.Enabled = False
+            Next
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 
@@ -86,13 +90,17 @@
     Private Sub NewGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewGameToolStripMenuItem.Click
         turn = True
         turn_count = 0
-        Dim z As Control
+        Dim c As Control
+        Try
+            For Each c In Controls
+                Dim a As Button = c
+                a.Enabled = True
+                a.Text = ""
+            Next
 
-        For Each z In Controls
-            Dim a As Button = z
-            a.Enabled = True
-            a.Text = ""
-        Next
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 End Class
