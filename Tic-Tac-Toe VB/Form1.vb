@@ -12,6 +12,13 @@
     End Sub
 
     Private Sub buttonClick(sender As Object, e As EventArgs) Handles btnC3.Click, btnC2.Click, btnC1.Click, btnB3.Click, btnB2.Click, btnB1.Click, btnA3.Click, btnA2.Click, btnA1.Click
+        Dim a As Button = sender
+        If turn Then
+            a.Text = "X"
+        Else
+            a.Text = "O"
+        End If
+
 
 
     End Sub
