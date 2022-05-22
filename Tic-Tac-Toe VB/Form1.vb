@@ -19,6 +19,8 @@
             a.Text = "O"
         End If
 
+        turn = Not turn
+        a.Enabled = False
 
 
     End Sub
