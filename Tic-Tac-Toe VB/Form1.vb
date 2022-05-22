@@ -7,10 +7,6 @@
 
     End Sub
 
-    Private Sub btnNewgame_Click(sender As Object, e As EventArgs) Handles btnNewgame.Click
-
-    End Sub
-
     Private Sub buttonClick(sender As Object, e As EventArgs) Handles btnC3.Click, btnC2.Click, btnC1.Click, btnB3.Click, btnB2.Click, btnB1.Click, btnA3.Click, btnA2.Click, btnA1.Click
         Dim btnClick As Button = sender
         If turn Then
@@ -81,7 +77,22 @@
         Next
     End Sub
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Application.Exit()
+    End Sub
+
+    Private Sub NewGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewGameToolStripMenuItem.Click
+        turn = True
+        turn_count = 0
+        Dim z As Control
+
+        For Each z In Controls
+            Dim a As Button = z
+            a.Enabled = True
+            a.Text = ""
+        Next
+
     End Sub
 End Class
