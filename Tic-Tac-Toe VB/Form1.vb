@@ -63,6 +63,11 @@
                 winner = "X"
             End If
             MessageBox.Show(winner + " Wins the Game!", "Congratulations!")
+        Else
+            If turn_count = 9 Then
+                MessageBox.Show("DRAW!", "Try Again!")
+            End If
+
         End If
 
     End Sub
